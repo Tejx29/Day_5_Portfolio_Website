@@ -210,7 +210,6 @@
       </form>
       <div x-show="checkoutStep === 3">
         <h3 class="text-2xl font-extrabold mb-4 text-indigo-700 flex items-center justify-center gap-2">
-          <svg class="w-6 h-6 text-green-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
           Review & Confirm
         </h3>
         <div class="bg-gray-50 rounded-xl shadow-inner p-4 mb-4 text-left border border-indigo-100">
@@ -249,17 +248,28 @@
   </div>
   <!-- Order Success Modal -->
   <div x-show="showOrderSuccess" class="fixed inset-0 flex items-center justify-center z-50" style="background:rgba(0,0,0,0.4);" x-transition>
-    <div class="bg-white rounded-lg shadow-lg p-8 max-w-sm w-full text-center relative">
-      <button @click="showOrderSuccess = false" class="absolute top-2 right-2 text-gray-400 hover:text-red-500 text-xl">&times;</button>
-      <h2 class="text-2xl font-bold mb-4 text-green-700">Order Confirmed!</h2>
-      <div class="mb-2 text-left">
-        <div><strong>Name:</strong> <span x-text="confirmedName"></span></div>
-        <div><strong>Email:</strong> <span x-text="confirmedEmail"></span></div>
-        <div><strong>Phone:</strong> <span x-text="confirmedPhone"></span></div>
-        <div><strong>Address:</strong> <span x-text="confirmedAddress"></span></div>
-        <div class="mt-2"><strong>Total:</strong> ₹<span x-text="confirmedTotal"></span></div>
+    <div class="bg-white rounded-2xl shadow-2xl p-10 max-w-sm w-full text-center relative border-4 border-green-200 animate__animated animate__fadeInDown">
+      <button @click="showOrderSuccess = false" class="absolute top-2 right-2 text-gray-400 hover:text-red-500 text-2xl font-bold">&times;</button>
+      <div class="flex flex-col items-center mb-4">
+        <div class="bg-green-100 rounded-full p-4 mb-2 shadow">
+          <svg class="w-12 h-12 text-green-600" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2.5" fill="#bbf7d0"/><path stroke-linecap="round" stroke-linejoin="round" d="M8 12.5l2.5 2.5 5-5" stroke="#22c55e" stroke-width="2.5"/></svg>
+        </div>
+        <h2 class="text-3xl font-extrabold mb-1 text-green-700 tracking-tight">Order Confirmed!</h2>
+        <p class="text-gray-600 mb-2 text-base">Thank you for shopping with <span class="font-bold text-indigo-700">TrueFit</span>!</p>
       </div>
-    
+      <div class="mb-4 text-left bg-green-50 rounded-lg p-4 shadow-inner border border-green-100">
+        <div class="mb-1"><span class="font-semibold text-gray-700">Name:</span> <span class="text-gray-900" x-text="confirmedName"></span></div>
+        <div class="mb-1"><span class="font-semibold text-gray-700">Email:</span> <span class="text-gray-900" x-text="confirmedEmail"></span></div>
+        <div class="mb-1"><span class="font-semibold text-gray-700">Phone:</span> <span class="text-gray-900" x-text="confirmedPhone"></span></div>
+        <div class="mb-1"><span class="font-semibold text-gray-700">Address:</span> <span class="text-gray-900" x-text="confirmedAddress"></span></div>
+        <div class="mt-2 flex items-center justify-between bg-gradient-to-r from-green-200 to-indigo-100 rounded-lg px-3 py-2">
+          <span class="font-bold text-lg text-gray-700">Total:</span>
+          <span class="text-2xl font-extrabold text-green-700">₹<span x-text="confirmedTotal"></span></span>
+        </div>
+      </div>
+      <div class="mt-6">
+        <button @click="showOrderSuccess = false" class="px-6 py-2 rounded-lg bg-gradient-to-r from-green-600 to-indigo-600 text-white font-bold shadow-lg hover:from-green-700 hover:to-indigo-700 transition text-lg">Continue Shopping</button>
+      </div>
     </div>
   </div>
   <!-- Overlay for cart -->

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TΣJAS | Portfolio Home</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="icon" href="./logo2.jpg" type="image/x-icon">
+  <style>
+    body {
+      background: radial-gradient(ellipse at 70% 30%, #6366f1 0%, #a5b4fc 40%, #f3f4f6 100%),
+                  linear-gradient(120deg, #e0e7ff 0%, #f3f4f6 100%);
+      min-height: 100vh;
+    }
+    .custom-shadow {
+      box-shadow: 0 8px 40px 0 rgba(80, 80, 160, 0.10), 0 1.5px 8px 0 rgba(80, 80, 160, 0.08);
+    }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col justify-between">
+  <!-- Header -->
+  <header class="w-full py-4 px-4 flex items-center justify-start mb-8">
+    <img src="./logo2.jpg" alt="Logo" class="w-10 h-10 rounded-full border-2 border-white shadow">
+  </header>
+  <main class="flex-1 flex flex-col-reverse md:flex-row items-center justify-center w-full gap-12 px-4 py-24">
+    <!-- Card -->
+    <div class="bg-white rounded-2xl custom-shadow p-10 md:p-14 max-w-xl w-full flex flex-col gap-8 border border-indigo-100">
+      <div>
+        <p class="text-lg md:text-xl text-gray-500 font-semibold mb-2 tracking-wide">// <span x-data="typewriter()" x-init="start()" class="font-bold text-gray-800"><span x-text="display"></span> WEB DEVELOPER</span></p>
+        <h2 class="text-4xl md:text-5xl font-extrabold leading-tight text-indigo-800 mb-4 tracking-tight">TEJAS PARAB</h2>
+      </div>
+      <div class="space-y-2 text-base md:text-lg text-gray-700">
+        <div><span class="font-bold text-gray-800">Address:</span> Virar, Maharashtra</div>
+        <div><span class="font-bold text-gray-800">Email:</span> <a href="mailto:223tejas2005@sjcem.edu.in" class="text-indigo-700 hover:underline">223tejas2005@sjcem.edu.in</a></div>
+        <div><span class="font-bold text-gray-800">Phone:</span> 9823022508</div>
+      </div>
+      <div class="mt-8 flex flex-wrap gap-4">
+        <a href="https://tejx29.github.io/Day_1_Tejx29.github.io/" class="rounded-full px-7 py-2 text-base font-semibold shadow bg-gray-900 text-white border border-gray-900 hover:bg-black transition">Day 1</a>
+        <a href="https://tejx29.github.io/Day_2_Enhanced_Portfolio/" class="rounded-full px-7 py-2 text-base font-semibold shadow bg-purple-600 text-white border border-purple-700 hover:bg-purple-800 transition">Day 2</a>
+        <a href="https://tejx29.github.io/Day_3_Final_Personal_Portfolio/" class="rounded-full px-7 py-2 text-base font-semibold shadow bg-blue-600 text-white border border-blue-700 hover:bg-blue-800 transition">Day 3</a>
+        <a href="https://tejx29.github.io/Day_4_Portfolio_Website/" class="rounded-full px-7 py-2 text-base font-semibold shadow bg-green-500 text-white border border-green-600 hover:bg-green-700 transition">Day 4</a>
+        <a href="https://tejx29.github.io/Enhanced_Portfolio/day5" class="rounded-full px-7 py-2 text-base font-semibold shadow bg-yellow-400 text-gray-900 border border-yellow-500 hover:bg-yellow-500 transition">Day 5</a>
+      </div>
+    </div>
+    <!-- Profile Image -->
+    <div class="rounded-full bg-gradient-to-br from-purple-100 via-indigo-50 to-pink-100 shadow-2xl flex items-center justify-center w-64 h-64 md:w-80 md:h-80 mb-4 md:mb-0 border-4 border-white">
+      <img src="./img4.png" alt="Tejas Parab" class="w-56 h-56 md:w-72 md:h-72 object-cover rounded-full shadow-lg" />
+    </div>
+  </main>
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-gray-200 py-8 w-full">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between px-4 gap-4">
+      <div class="flex items-center gap-2">
+        <img src="./logo2.jpg" alt="Logo" class="w-8 h-8 rounded-full">
+        <span class="font-bold text-lg">TΣJAS</span>
+      </div>
+      <div class="text-xs">&copy; 2025 TΣJAS. All rights reserved.</div>
+    </div>
+  </footer>
+  <!-- Typewriter Script -->
+  <script>
+    function typewriter() {
+      return {
+        words: ['WEB', 'SOFTWARE'],
+        display: '',
+        wordIndex: 0,
+        charIndex: 0,
+        isDeleting: false,
+        typingSpeed: 100,
+        deletingSpeed: 50,
+        pauseTime: 1500,
+        start() {
+          this.typeLoop();
+        },
+        typeLoop() {
+          const currentWord = this.words[this.wordIndex];
+          if (this.isDeleting) {
+            this.display = currentWord.substring(0, this.charIndex);
+            this.charIndex--;
+          } else {
+            this.display = currentWord.substring(0, this.charIndex);
+            this.charIndex++;
+          }
+          let delay = this.isDeleting ? this.deletingSpeed : this.typingSpeed;
+          if (!this.isDeleting && this.charIndex > currentWord.length) {
+            delay = this.pauseTime;
+            this.isDeleting = true;
+            this.charIndex = currentWord.length;
+          } else if (this.isDeleting && this.charIndex < 0) {
+            this.isDeleting = false;
+            this.wordIndex = (this.wordIndex + 1) % this.words.length;
+            this.charIndex = 0;
+            delay = 500;
+          }
+          setTimeout(() => this.typeLoop(), delay);
+        }
+      }
+    }
+  </script>
+</body>
+</html>
