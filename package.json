@@ -1,0 +1,24 @@
+{
+  "name": "final_personal_portfolio",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Tejx29/Final_Personal_Portfolio.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Tejx29/Final_Personal_Portfolio/issues"
+  },
+  "homepage": "https://github.com/Tejx29/Final_Personal_Portfolio#readme",
+  "devDependencies": {
+    "daisyui": "^5.0.35",
+    "tailwindcss": "^4.1.7"
+  }
+}
